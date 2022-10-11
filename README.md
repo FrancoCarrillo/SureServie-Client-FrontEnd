@@ -1,6 +1,6 @@
 # SureService
 
-Repository for the frontend of the SureService application, this frontend application is made with the JavaScript language, with the Angular framework
+Repository for the frontend of the SureService application, this frontend application is made with the TypeScript language, with the Angular framework
 
 
 ## Authors
