@@ -7,6 +7,7 @@ Repository for the frontend of the SureService application, this frontend applic
 
 - [@FrancoCarrillo](https://www.github.com/FrancoCarrillo)
 - [@Williamz21](https://github.com/Williamz21)
+- [@JeffersonOrtega2018](https://github.com/JeffersonOrtega2018)
 
 ## URL
 
