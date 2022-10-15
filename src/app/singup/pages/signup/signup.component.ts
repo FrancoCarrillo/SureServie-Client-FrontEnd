@@ -10,7 +10,7 @@ export class SignupComponent implements OnInit {
 
   hide = true;
 
-  loginForm = new FormGroup({
+  signUp = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
   })
@@ -23,11 +23,11 @@ export class SignupComponent implements OnInit {
 
 
   get email() {
-    return this.loginForm.get('email');
+    return this.signUp.get('email');
   }
 
   get password() {
-    return this.loginForm.get('password');
+    return this.signUp.get('password');
   }
 
   

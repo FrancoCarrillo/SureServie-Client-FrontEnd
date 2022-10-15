@@ -1,9 +1,6 @@
 <mat-card>
-  
-  
 
-  
-    <form [formGroup]="loginForm">
+    <form [formGroup]="signUp">
       
       <div class="spacer-t-1"></div>
   
@@ -23,33 +20,24 @@
       
 
       <mat-form-field appearance="fill">
-        <mat-label>Your Email</mat-label>
-        <input matInput placeholder="Email address" formControlName="email" />
-          <mat-error *ngIf="email?.errors?.['required']">
-            Email is required
-          </mat-error>
+        <mat-label>Name</mat-label>
+        <input matInput/>
       </mat-form-field>
   
       <div class="spacer-t-3"></div>
 
 
       <mat-form-field appearance="fill">
-        <mat-label>Your Email</mat-label>
-        <input matInput placeholder="Email address" formControlName="email" />
-          <mat-error *ngIf="email?.errors?.['required']">
-            Email is required
-          </mat-error>
+        <mat-label>Mobile Number</mat-label>
+        <input matInput/>
       </mat-form-field>
   
       <div class="spacer-t-3"></div>
 
 
       <mat-form-field appearance="fill">
-        <mat-label>Your Email</mat-label>
-        <input matInput placeholder="Email address" formControlName="email" />
-          <mat-error *ngIf="email?.errors?.['required']">
-            Email is required
-          </mat-error>
+        <mat-label>Address</mat-label>
+        <input matInput/>
       </mat-form-field>
   
       <div class="spacer-t-3"></div>
@@ -68,14 +56,14 @@
           </button>
         </mat-form-field>
       
-      <div class="spacer-t-4"></div>
+      <div class="spacer-t-5"></div>
   
   
       <div class="center margin-top">
           <button class="login-button" type="submit" mat-raised-button>SIGN UP</button>
       </div>
       
-      <div class="spacer-t-1"></div>
+      <div class="spacer-t-6"></div>
       
       <span class="center margin-top final-text-login">Do you already have an account? <a class="sign-up-link" routerLink="/log-in">Log in</a></span>
   
