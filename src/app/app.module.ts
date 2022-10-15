@@ -12,6 +12,12 @@ import { ServiceComponent } from './service/pages/service/service.component';
 import { SettingsComponent } from './settings/pages/settings/settings.component';
 import { SignupComponent } from './singup/pages/signup/signup.component';
 import {AppRoutingModule} from "./app.routing";
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
+import  {MatIconModule} from "@angular/material/icon";
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormGroup, FormControl, Validators} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,7 +34,12 @@ import {AppRoutingModule} from "./app.routing";
     BrowserAnimationsModule,
     MatToolbarModule,
     RouterModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
