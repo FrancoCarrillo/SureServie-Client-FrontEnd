@@ -5,15 +5,16 @@ import {ServiceComponent} from "./service/pages/service/service.component";
 import {SettingsComponent} from "./settings/pages/settings/settings.component";
 import {LoginComponent} from "./login/pages/login/login.component";
 import {SignupComponent} from "./singup/pages/signup/signup.component";
+import {AuthGuard} from "./share/guard/auth.guard";
 
 const routes: Routes = [
-  { path: 'service', component: ServiceComponent},
-  { path: 'reservation', component: ReservationComponent},
-  { path: 'settings', component: SettingsComponent},
+  { path: 'service', component: ServiceComponent, canActivate: [AuthGuard]},
+  { path: 'reservation', component: ReservationComponent, canActivate: [AuthGuard]},
+  { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
   { path: 'log-in', component: LoginComponent},
   { path: 'sing-up', component: SignupComponent},
   { path: '', redirectTo: '/service', pathMatch: 'full'},
-  { path: '**', component: ServiceComponent}
+  { path: '**', component: LoginComponent}
 ];
 
 @NgModule({

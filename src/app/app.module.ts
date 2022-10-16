@@ -18,6 +18,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import  {MatIconModule} from "@angular/material/icon";
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {FormGroup, FormControl, Validators} from "@angular/forms";
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    HttpClientModule,
     RouterModule,
     MatButtonModule,
     MatCardModule,
