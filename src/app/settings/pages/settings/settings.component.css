@@ -1,0 +1,53 @@
+.body {
+    max-width: 600px;
+    margin: 2em auto;
+    text-align: center;
+  }
+
+  .header-login{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+  }
+
+  .image-user{
+    max-height: 150px;
+    max-width: 70%;
+  }
+
+  mat-form-field {
+    width: 90%;
+  }
+
+  .spacer-t-1{
+    margin-top: 50px;
+  }
+  
+  .spacer-t-2{
+    margin-top: 30px;
+  }
+  .spacer-t-3{
+    margin-top: 40px;
+  }
+
+  .spacer-t-4{
+    margin-top: 20px;
+  }
+  
+  .login-button1 {
+    margin-right: 100PX;
+  }
+
+  .login-button1, .login-button2 {
+    width: 30%;
+    color: white;
+  } 
+
+  .login-button1 {
+    background-color: #0332FC;
+  }
+
+  .login-button2 {
+    background-color: red;
+  }

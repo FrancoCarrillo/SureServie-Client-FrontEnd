@@ -1,1 +1,49 @@
-<p>settings works!</p>
+<div class="body">
+
+    <div class="spacer-t-1"></div>
+
+    <span class="header-login">Settings</span>
+
+    <div class="spacer-t-3"></div>
+    
+    <img class="image-user" src="./assets/user.png">
+
+    <div class="spacer-t-3"></div>
+
+    <div>
+        <mat-form-field appearance="outline" [hideRequiredMarker]="hideRequiredControl.value" [floatLabel]="getFloatLabelValue()">
+            <input matInput placeholder="Name" required>
+        </mat-form-field>
+
+
+        <div class="spacer-t-4"></div>
+
+
+        <mat-form-field appearance="outline" [hideRequiredMarker]="hideRequiredControl.value" [floatLabel]="getFloatLabelValue()">
+            <input matInput placeholder="Number" required>
+        </mat-form-field>
+
+        <div class="spacer-t-4"></div>
+
+        <mat-form-field appearance="outline" [hideRequiredMarker]="hideRequiredControl.value" [floatLabel]="getFloatLabelValue()">
+            <input matInput placeholder="Location" required>
+        </mat-form-field>
+
+        <div class="spacer-t-4"></div>
+
+        <mat-form-field appearance="outline" [hideRequiredMarker]="hideRequiredControl.value" [floatLabel]="getFloatLabelValue()">
+            <input matInput placeholder="Email" required>
+        </mat-form-field>
+
+    </div>
+
+    <div class="spacer-t-2"></div>
+
+    <div class="">
+        <button class="login-button1" type="submit" mat-raised-button>EDIT</button>
+        <button class="login-button2" type="submit" mat-raised-button>SAVE</button>
+        
+    </div>
+
+
+</div>
