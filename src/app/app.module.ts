@@ -19,6 +19,8 @@ import  {MatIconModule} from "@angular/material/icon";
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import {HttpClientModule} from "@angular/common/http";
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
