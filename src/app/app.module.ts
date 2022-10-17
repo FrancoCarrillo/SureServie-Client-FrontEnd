@@ -18,7 +18,13 @@ import {ReactiveFormsModule} from "@angular/forms";
 import  {MatIconModule} from "@angular/material/icon";
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormGroup, FormControl, Validators} from "@angular/forms";
+import { MatSelectModule } from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
 import {HttpClientModule} from "@angular/common/http";
+import { TechnicianInfoComponent } from './dialog/technician-info/technician-info.component';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,8 @@ import {HttpClientModule} from "@angular/common/http";
     LoginComponent,
     ServiceComponent,
     SettingsComponent,
-    SignupComponent
+    SignupComponent,
+    TechnicianInfoComponent
   ],
   imports: [
     AppRoutingModule,
@@ -41,7 +48,12 @@ import {HttpClientModule} from "@angular/common/http";
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatDatepickerModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
