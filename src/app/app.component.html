@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="onLogin">
   <mat-toolbar color="primary">
     <mat-icon  class="toolbar-icon" (click)="drawer.toggle()">menu</mat-icon>
     <span class="toolbar-title">SureService</span>
@@ -14,5 +14,8 @@
     <router-outlet></router-outlet>
 
   </mat-drawer-container>
+</div>
 
+<div *ngIf="!onLogin">
+  <router-outlet></router-outlet>
 </div>

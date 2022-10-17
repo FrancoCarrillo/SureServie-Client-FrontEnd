@@ -40,7 +40,10 @@ export class LoginComponent implements OnInit {
 
     this.loginService.sign_in(this.user).subscribe((response: any) => {
       localStorage.setItem("id", response.id)
-      this.route.navigate(['/service']);
+      this.route.navigate(['/service']).then( () =>{
+        location.reload()
+        }
+      );
     }, () =>{
       alert("Wrong username or password")
     })
