@@ -21,6 +21,8 @@ import {FormGroup, FormControl, Validators} from "@angular/forms";
 import { MatSelectModule } from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import {HttpClientModule} from "@angular/common/http";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
 import { TechnicianInfoComponent } from './dialog/technician-info/technician-info.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -49,6 +51,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ReactiveFormsModule,
     MatIconModule,
     MatFormFieldModule,
+    MatSidenavModule,
+    MatListModule,
     MatSelectModule,
     MatDialogModule,
     MatDividerModule,

@@ -1,0 +1,19 @@
+.toolbar-icon{
+  cursor: pointer;
+}
+
+.toolbar-title{
+  margin-left: 20px;
+}
+
+.app-container {
+  height: 90vh;
+}
+
+.side-nav{
+  width: 15%;
+}
+
+.nav-icon{
+  margin-right: 20px;
+}
