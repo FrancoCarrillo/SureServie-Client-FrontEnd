@@ -22,7 +22,7 @@ export class ServiceComponent implements OnInit {
     place: this.selected2,
     disponibility: this.selected3,
   });
-  
+
   constructor(private serviceService: ServiceService, public builder: FormBuilder, public dialog: MatDialog) { }
 
   get date() { return this.serviceForm.controls['date'];}
