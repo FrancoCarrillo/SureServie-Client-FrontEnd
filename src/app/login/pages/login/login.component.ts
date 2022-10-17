@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {LoginDto} from "../../model/LoginDto";
+import {LoginService} from "../../services/login.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -11,23 +14,37 @@ export class LoginComponent implements OnInit {
 
   hide = true;
 
+  user: LoginDto = new LoginDto("", "");
+
   loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
+    username: new FormControl('', [Validators.required]),
     password: new FormControl('', Validators.required),
   })
 
-  constructor() { }
+  constructor(private loginService: LoginService, private route: Router) { }
 
   ngOnInit(): void {
+
   }
 
-  
-  get email() {
-    return this.loginForm.get('email');
+
+  get username() {
+    return this.loginForm.get('username');
   }
 
   get password() {
     return this.loginForm.get('password');
+  }
+
+  onLogin(){
+
+    this.loginService.sign_in(this.user).subscribe((response: any) => {
+      localStorage.setItem("id", response.id)
+      this.route.navigate(['/service']);
+    }, () =>{
+      alert("Wrong username or password")
+    })
+
   }
 
 }
