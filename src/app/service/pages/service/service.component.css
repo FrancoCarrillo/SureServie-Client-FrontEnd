@@ -1,0 +1,108 @@
+.divide{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+@media (min-width: 1280px) {
+    .divide{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1280px) {
+    .container{
+        width: 80%;
+    }
+}
+
+.title{
+    font-weight: bold;
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    width: 100%;
+}
+
+.form2{
+    width: 100%;
+}
+
+
+@media (min-width: 1280px) {
+    .form{
+        display: inline;
+    }
+    .form2{
+        margin-right: 2rem;
+        width: 29rem;
+    }
+    .form2:last-child{
+        margin-right: 0;
+    }
+    .group{
+        display: inline;
+    }
+    .containbutton{
+        margin-top: 5rem;
+        margin-left: 2rem;
+    }
+}
+
+.button{
+    padding:  0 2rem;
+    font-size: 20px;
+}
+
+.technicianCard{
+    background-color: white;
+    width: 400px;
+    margin: 1rem auto;
+    border-radius: 1rem;
+}
+
+.technicianCard:hover{
+    box-shadow: 0px 5px 32px -2px rgba(0,0,0,0.27);
+    background-color: white;
+    border-radius: 1rem;  
+  }
+
+.technicians{
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+    padding-bottom: 4rem;
+}
+
+.text{
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.technician-button{
+    margin-top: 0;
+}
+
