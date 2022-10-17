@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SureService-FrontEnd';
-  showFiller = true;
   navItem = [
     {
       "title": "Service",
