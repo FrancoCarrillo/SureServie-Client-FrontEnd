@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl} from '@angular/forms';
-import {FloatLabelType} from '@angular/material/form-field';  
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FloatLabelType} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-settings',
@@ -9,20 +9,21 @@ import {FloatLabelType} from '@angular/material/form-field';
 })
 
 export class SettingsComponent implements OnInit  {
-  hideRequiredControl = new FormControl(false);
-  floatLabelControl = new FormControl('auto' as FloatLabelType);
-  options = this._formBuilder.group({
-    hideRequired: this.hideRequiredControl,
-    floatLabel: this.floatLabelControl,
-  });
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor() {}
 
-  getFloatLabelValue(): FloatLabelType {
-    return this.floatLabelControl.value || 'auto';
-  }
-
+  disabled = "all"
   ngOnInit(): void {
   }
+
+  settingsForm = new FormGroup({
+    name: new FormControl(),
+    lastname: new FormControl(),
+    telephone_number: new FormControl(),
+    id_number: new FormControl(),
+    username: new FormControl(),
+    email: new FormControl(),
+  })
+
 
 }

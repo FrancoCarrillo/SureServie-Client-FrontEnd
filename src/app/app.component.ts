@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,6 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit{
   title = 'SureService-FrontEnd';
-
 
   onLogin = false;
 
@@ -29,9 +29,19 @@ export class AppComponent implements OnInit{
     }
   ]
 
+  constructor(private route: Router) {
+  }
+
+
   ngOnInit(): void {
     this.onLogin = localStorage.getItem("id") != null;
   }
 
+  onLogout(): void {
+    localStorage.removeItem("id")
+    this.route.navigate(['/log-in']).then(() =>{
+      location.reload()
+    })
+  }
 
 }

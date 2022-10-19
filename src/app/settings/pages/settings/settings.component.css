@@ -1,53 +1,35 @@
-.body {
-    max-width: 600px;
-    margin: 2em auto;
-    text-align: center;
-  }
+.settings {
+    display: flex;
+}
+.settings-form{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 
-  .header-login{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 70px;
-  }
+  padding: 20px;
+}
+.image-user{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 
-  .image-user{
-    max-height: 150px;
-    max-width: 70%;
-  }
+  padding: 20px 3.3rem;
+}
+.edit-button, .save-button {
+  color: white;
+}
 
-  mat-form-field {
-    width: 90%;
-  }
+.settings-button{
+  display: flex;
+  flex-direction: column;
+}
 
-  .spacer-t-1{
-    margin-top: 50px;
-  }
-  
-  .spacer-t-2{
-    margin-top: 30px;
-  }
-  .spacer-t-3{
-    margin-top: 40px;
-  }
+.save-button {
+  background-color: #0332FC;
+  margin-top: 6px;
+}
+.edit-button {
+  background-color: red;
+}
 
-  .spacer-t-4{
-    margin-top: 20px;
-  }
-  
-  .login-button1 {
-    margin-right: 100PX;
-  }
 
-  .login-button1, .login-button2 {
-    width: 30%;
-    color: white;
-  } 
-
-  .login-button1 {
-    background-color: #0332FC;
-  }
-
-  .login-button2 {
-    background-color: red;
-  }
