@@ -49,7 +49,10 @@ export class TechnicianInfoComponent implements OnInit {
   }
 
   openSnackBar(){
-    this._snackBar.open("Reservación hecha correctamente", "Cerrar");
+    this._snackBar.open("Service request successful!", "Close", {
+      duration: 5000,
+      panelClass: ['snackbar-service']
+    });
   }
 
   postReservation(){
