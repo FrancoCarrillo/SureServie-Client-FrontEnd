@@ -1,15 +1,19 @@
 .divide{
     display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
+    padding: 0 10px;
 }
 
 .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 2rem;
+}
+
+.containbutton{
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 1280px) {
@@ -53,7 +57,7 @@
         display: inline;
     }
     .form2{
-        margin-right: 2rem;
+        margin-right: 1rem;
         width: 29rem;
     }
     .form2:last-child{
@@ -69,13 +73,13 @@
 }
 
 .button{
-    padding:  0 2rem;
-    font-size: 20px;
+    padding:  0 1.5rem;
+    font-size: 17px;
 }
 
 .technicianCard{
     background-color: white;
-    width: 400px;
+    width: 300px;
     margin: 1rem auto;
     border-radius: 1rem;
 }
@@ -83,7 +87,7 @@
 .technicianCard:hover{
     box-shadow: 0px 5px 32px -2px rgba(0,0,0,0.27);
     background-color: white;
-    border-radius: 1rem;  
+    border-radius: 1rem;
   }
 
 .technicians{
