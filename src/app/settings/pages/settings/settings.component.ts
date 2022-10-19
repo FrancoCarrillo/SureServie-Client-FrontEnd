@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {FloatLabelType} from '@angular/material/form-field';
+import {FormControl, FormGroup} from '@angular/forms';
+import {SettingsService} from "../../services/settings.service";
+import {Client} from "../../model/Client";
+
 
 @Component({
   selector: 'app-settings',
@@ -10,11 +12,9 @@ import {FloatLabelType} from '@angular/material/form-field';
 
 export class SettingsComponent implements OnInit  {
 
-  constructor() {}
-
-  disabled = "all"
-  ngOnInit(): void {
-  }
+  enable: boolean = false
+  clientId: Number = 0;
+  client: Client = new Client("","","","","","","",0);
 
   settingsForm = new FormGroup({
     name: new FormControl(),
@@ -25,5 +25,38 @@ export class SettingsComponent implements OnInit  {
     email: new FormControl(),
   })
 
+  constructor(private settingsService: SettingsService) {}
 
+  ngOnInit(): void {
+    this.clientId = Number(localStorage?.getItem("id"))
+    this.getClient()
+    this.settingsForm.disable()
+  }
+
+  getClient(){
+    this.settingsService.getClient(this.clientId).subscribe((response: any) => {
+      this.client = response
+    })
+  }
+
+  editForm(): void {
+    this.settingsForm.enable()
+    this.enable = true
+  }
+
+  cancelEditForm(): void {
+    this.settingsForm.disable()
+    this.enable = false
+  }
+
+  saveData(): void{
+    this.client.password = "string"
+    this.settingsService.updateClient(this.clientId, this.client).subscribe((response:any) => {
+      this.getClient()
+      this.settingsForm.disable()
+      this.enable = false
+    }, (e)=>{
+      console.log(e)
+    })
+  }
 }
