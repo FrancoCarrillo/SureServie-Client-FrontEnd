@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {FloatLabelType} from '@angular/material/form-field';
+import {FormControl, FormGroup} from '@angular/forms';
+
 
 @Component({
   selector: 'app-settings',
@@ -12,9 +12,7 @@ export class SettingsComponent implements OnInit  {
 
   constructor() {}
 
-  disabled = "all"
-  ngOnInit(): void {
-  }
+  enable: boolean = false
 
   settingsForm = new FormGroup({
     name: new FormControl(),
@@ -25,5 +23,17 @@ export class SettingsComponent implements OnInit  {
     email: new FormControl(),
   })
 
+  ngOnInit(): void {
+    this.settingsForm.disable()
+  }
 
+  editForm(): void {
+    this.settingsForm.enable()
+    this.enable = true
+  }
+
+  cancelEditForm(): void {
+    this.settingsForm.disable()
+    this.enable = false
+  }
 }
