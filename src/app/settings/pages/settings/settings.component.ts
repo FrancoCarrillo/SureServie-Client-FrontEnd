@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {SettingsService} from "../../services/settings.service";
+import {Client} from "../../model/Client";
 
 
 @Component({
@@ -10,9 +12,9 @@ import {FormControl, FormGroup} from '@angular/forms';
 
 export class SettingsComponent implements OnInit  {
 
-  constructor() {}
-
   enable: boolean = false
+  clientId: Number = 0;
+  client: Client = new Client("","","","","","","",0);
 
   settingsForm = new FormGroup({
     name: new FormControl(),
@@ -23,8 +25,18 @@ export class SettingsComponent implements OnInit  {
     email: new FormControl(),
   })
 
+  constructor(private settingsService: SettingsService) {}
+
   ngOnInit(): void {
+    this.clientId = Number(localStorage?.getItem("id"))
+    this.getClient()
     this.settingsForm.disable()
+  }
+
+  getClient(){
+    this.settingsService.getClient(this.clientId).subscribe((response: any) => {
+      this.client = response
+    })
   }
 
   editForm(): void {
@@ -35,5 +47,16 @@ export class SettingsComponent implements OnInit  {
   cancelEditForm(): void {
     this.settingsForm.disable()
     this.enable = false
+  }
+
+  saveData(): void{
+    this.client.password = "string"
+    this.settingsService.updateClient(this.clientId, this.client).subscribe((response:any) => {
+      this.getClient()
+      this.settingsForm.disable()
+      this.enable = false
+    }, (e)=>{
+      console.log(e)
+    })
   }
 }
