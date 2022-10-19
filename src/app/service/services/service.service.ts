@@ -24,6 +24,13 @@ export class ServiceService {
     return throwError(() => new Error('Something happened with request, please try again later'));
   }
 
+  getAllTechnician(){
+    return this.http.get(`${this.basePath}/technician`)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+
   getAllServices(disponibility: number, district: string, specialityId: number){
     return this.http.get(`${this.basePath}/technician/disponibility/${disponibility}/district/${district}/speciality/${specialityId}`, this.httpOptions)
     .pipe(
