@@ -1,0 +1,74 @@
+<!-- Reservation Info -->
+<div class="dialog-container" *ngIf="show">
+  <h1 mat-dialog-title >{{getCurrentReservation().serviceRequest.technician.username}}</h1>
+  <div mat-dialog-content>
+    <div class="information">
+      <div class="text">
+        <h3>Selected Date: 12/07/22</h3>
+        <h3>Location: San Borja, Lima, Peru</h3>
+        <h3>Message: {{getCurrentReservation().serviceRequest.detail}}</h3>
+      </div>
+      <div>
+        <img class="img" mat-card-image src="https://maxess.se/wp-content/uploads/2020/05/undraw_festivities_tvvj.png" alt="Photo of a Shiba Inu">
+        <h5 class="reservation-msg">Ask the technician this ID when approaching your home</h5>
+        <h5 class="reservation-id">{{getCurrentReservation().serviceRequest.id}}</h5>
+      </div>
+    </div>
+  </div>
+  <div mat-dialog-actions class="button-group">
+    <button mat-raised-button (click)="show=!show">PAY</button>
+    <button mat-stroked-button mat-dialog-close>BACK</button>
+  </div>
+</div>
+
+<!-- Payment -->
+<div *ngIf="show===false" class="payment-form">
+  <h1 mat-dialog-title class="payment-title"> Add Credit/Debit Card </h1>
+  <form [formGroup]="paymentForm">
+    <mat-form-field class="card-number" appearance="outline">
+      <mat-label>Card Number</mat-label>
+      <input autocomplete="off" type="text" matInput formControlName="cardNumber" required maxlength="19">
+    </mat-form-field>
+
+    <div class="expiration-container">
+      Card Expiration
+      <mat-form-field class="expiration-form-date" appearance="outline">
+        <mat-label>Month</mat-label>
+        <input autocomplete="off" type="text" matInput formControlName="expirationMonth" required maxlength="2">
+      </mat-form-field>
+      /
+      <mat-form-field class="expiration-form-date" appearance="outline">
+        <mat-label>Day</mat-label>
+        <input autocomplete="off" type="text" matInput formControlName="expirationDay" required maxlength="2">
+      </mat-form-field>
+      |
+      <mat-form-field class="expiration-form-code" appearance="outline">
+        <mat-label>Security Code</mat-label>
+        <input autocomplete="off" type="text" matInput formControlName="cardSecurityCode" required maxlength="3">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="customer-info" appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input autocomplete="off" matInput formControlName="firstName" class="space" required maxlength="35">
+        <mat-error *ngIf="firstNameVal?.errors?.['maxLength'] && !firstNameVal?.errors?.['required']">
+          Firstname must have maximum 35 characters
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="customer-info" appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input autocomplete="off" matInput formControlName="lastName" class="space" required maxlength="45">
+        <mat-error *ngIf="lastNameVal?.errors?.['maxLength'] && !lastNameVal?.errors?.['required']">
+          Lastname must have maximum 45 characters
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+  <div mat-dialog-actions class="button-group">
+    <button mat-raised-button mat-dialog-close (click)="postPayment()">PAY</button>
+    <button mat-stroked-button (click)="show=!show">BACK</button>
+  </div>
+</div>
