@@ -1,49 +1,40 @@
-<div class="body">
-
-    <div class="spacer-t-1"></div>
-
-    <span class="header-login">Settings</span>
-
-    <div class="spacer-t-3"></div>
-    
-    <img class="image-user" src="./assets/user.png">
-
-    <div class="spacer-t-3"></div>
-
-    <div>
-        <mat-form-field appearance="outline" [hideRequiredMarker]="hideRequiredControl.value" [floatLabel]="getFloatLabelValue()">
-            <input matInput placeholder="Name" required>
-        </mat-form-field>
-
-
-        <div class="spacer-t-4"></div>
-
-
-        <mat-form-field appearance="outline" [hideRequiredMarker]="hideRequiredControl.value" [floatLabel]="getFloatLabelValue()">
-            <input matInput placeholder="Number" required>
-        </mat-form-field>
-
-        <div class="spacer-t-4"></div>
-
-        <mat-form-field appearance="outline" [hideRequiredMarker]="hideRequiredControl.value" [floatLabel]="getFloatLabelValue()">
-            <input matInput placeholder="Location" required>
-        </mat-form-field>
-
-        <div class="spacer-t-4"></div>
-
-        <mat-form-field appearance="outline" [hideRequiredMarker]="hideRequiredControl.value" [floatLabel]="getFloatLabelValue()">
-            <input matInput placeholder="Email" required>
-        </mat-form-field>
-
+<div class="settings">
+    <div class="image-user">
+      <img src="./assets/us2.png" alt="profile-img">
+      <button class="save-button" type="submit" mat-raised-button>Change Profile Image</button>
     </div>
-
-    <div class="spacer-t-2"></div>
-
-    <div class="">
-        <button class="login-button1" type="submit" mat-raised-button>EDIT</button>
-        <button class="login-button2" type="submit" mat-raised-button>SAVE</button>
-        
+    <div style=" flex: 1;">
+      <form [formGroup]="settingsForm" class="settings-form">
+        <mat-form-field appearance="outline" class="input-settings" >
+          <mat-label>Your Name</mat-label>
+          <input matInput value="{{ client.name }}"  [(ngModel)]="client.name" placeholder="Name" formControlName="name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Your lastname</mat-label>
+          <input matInput value="{{ client.last_name }}" [(ngModel)]="client.last_name" placeholder="Lastname" formControlName="lastname">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Your telephone number</mat-label>
+          <input matInput value="{{ client.telephone_number }}" [(ngModel)]="client.telephone_number" placeholder="Telephone Number" formControlName="telephone_number">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>ID Number</mat-label>
+          <input matInput value="{{ client.dni }}" [(ngModel)]="client.dni" placeholder="ID Number" formControlName="id_number">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Your username</mat-label>
+          <input matInput value="{{ client.username }}" [(ngModel)]="client.username" placeholder="Username" formControlName="username">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Your email</mat-label>
+          <input matInput value="{{ client.email }}" [(ngModel)]="client.email" placeholder="Email" formControlName="email">
+        </mat-form-field>
+      </form>
+      <div class="settings-button">
+        <button *ngIf="!enable" class="edit-button" type="submit" mat-raised-button (click)="editForm()">EDIT</button>
+        <button *ngIf="enable" class="save-button" type="submit" mat-raised-button (click)="saveData()">SAVE</button>
+        <button *ngIf="enable" class="cancel-button" type="submit" mat-raised-button (click)="cancelEditForm()">CANCEL</button>
+      </div>
     </div>
-
 
 </div>

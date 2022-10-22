@@ -14,8 +14,9 @@
           <mat-select formControlName="place" required>
             <mat-option value="La Molina">La Molina</mat-option>
             <mat-option value="Ate Vitarte">Ate Vitarte</mat-option>
+            <mat-option value="Surco">Surco</mat-option>
           </mat-select>
-        </mat-form-field> 
+        </mat-form-field>
         <mat-form-field class="form2" appearance="fill">
           <mat-label>Do you want to see only the technicians available at this moment?</mat-label>
           <mat-select formControlName="disponibility" required>
@@ -26,7 +27,8 @@
       </form>
   </div>
   <div class="containbutton">
-    <button mat-raised-button mat-button color="primary" class="button" (click)="getTechnicians()">SEARCH</button>
+    <button mat-raised-button mat-button color="primary" class="button" (click)="getTechnicians()">Search</button>
+    <button mat-raised-button mat-button color="warn" class="button" style="margin-top: 5px" (click)="getAllTechnicians()">All</button>
   </div>
 </div>
 
@@ -38,18 +40,21 @@
         <mat-card-title>{{item.name}} {{item.last_name}}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <h4 class="text">Profession:</h4> 
+        <h4 class="text">Profession:</h4>
         {{item.speciality.name}}
         <h4 class="text">Location:</h4>
         {{item.district}}
         <h4 class="text">Disponibility:</h4>
-        {{item.disponibility}}
+        {{ item.disponibility == 1 ? "Yes" : "No" }}
       </mat-card-content>
       <mat-card-actions>
         <button class="technician-button" mat-button (click)="openDialog(item.id)">MORE INFO</button>
       </mat-card-actions>
     </mat-card>
   </div>
+</div>
+<div class="technicians" *ngIf="technicians.length == 0">
+  <h3>Didn't find technicians with these requirements</h3>
 </div>
 
 

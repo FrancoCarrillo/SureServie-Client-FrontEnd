@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl} from '@angular/forms';
-import {FloatLabelType} from '@angular/material/form-field';  
+import {FormControl, FormGroup} from '@angular/forms';
+import {SettingsService} from "../../services/settings.service";
+import {Client} from "../../model/Client";
+
 
 @Component({
   selector: 'app-settings',
@@ -9,20 +11,52 @@ import {FloatLabelType} from '@angular/material/form-field';
 })
 
 export class SettingsComponent implements OnInit  {
-  hideRequiredControl = new FormControl(false);
-  floatLabelControl = new FormControl('auto' as FloatLabelType);
-  options = this._formBuilder.group({
-    hideRequired: this.hideRequiredControl,
-    floatLabel: this.floatLabelControl,
-  });
 
-  constructor(private _formBuilder: FormBuilder) {}
+  enable: boolean = false
+  clientId: Number = 0;
+  client: Client = new Client("","","","","","","",0);
 
-  getFloatLabelValue(): FloatLabelType {
-    return this.floatLabelControl.value || 'auto';
-  }
+  settingsForm = new FormGroup({
+    name: new FormControl(),
+    lastname: new FormControl(),
+    telephone_number: new FormControl(),
+    id_number: new FormControl(),
+    username: new FormControl(),
+    email: new FormControl(),
+  })
+
+  constructor(private settingsService: SettingsService) {}
 
   ngOnInit(): void {
+    this.clientId = Number(localStorage?.getItem("id"))
+    this.getClient()
+    this.settingsForm.disable()
   }
 
+  getClient(){
+    this.settingsService.getClient(this.clientId).subscribe((response: any) => {
+      this.client = response
+    })
+  }
+
+  editForm(): void {
+    this.settingsForm.enable()
+    this.enable = true
+  }
+
+  cancelEditForm(): void {
+    this.settingsForm.disable()
+    this.enable = false
+  }
+
+  saveData(): void{
+    this.client.password = "string"
+    this.settingsService.updateClient(this.clientId, this.client).subscribe((response:any) => {
+      this.getClient()
+      this.settingsForm.disable()
+      this.enable = false
+    }, (e)=>{
+      console.log(e)
+    })
+  }
 }

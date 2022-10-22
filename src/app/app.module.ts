@@ -17,16 +17,18 @@ import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import  {MatIconModule} from "@angular/material/icon";
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormGroup, FormControl, Validators} from "@angular/forms";
 import { MatSelectModule } from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import {HttpClientModule} from "@angular/common/http";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
 import { TechnicianInfoComponent } from './dialog/technician-info/technician-info.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatGridListModule} from "@angular/material/grid-list";
 import { ReservationInfoComponent } from './dialog/reservation-info/reservation-info.component';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +40,27 @@ import { ReservationInfoComponent } from './dialog/reservation-info/reservation-
     SignupComponent,
     TechnicianInfoComponent,
     ReservationInfoComponent
+  ],
+  imports: [
+    AppRoutingModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    HttpClientModule,
+    RouterModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatSidenavModule,
+    MatListModule,
+    MatSelectModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatDatepickerModule,
+    MatSnackBarModule
   ],
     imports: [
         AppRoutingModule,
@@ -62,4 +85,6 @@ import { ReservationInfoComponent } from './dialog/reservation-info/reservation-
   providers: [],
   bootstrap: [AppComponent]
 })
+
+// @ts-ignore
 export class AppModule { }
