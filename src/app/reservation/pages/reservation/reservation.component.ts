@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {ReservationService} from "../../services/reservation.service";
-import {Reservation} from "../../model/ReservationDto";
 import {ReservationInfoComponent} from "../../../dialog/reservation-info/reservation-info.component";
+import {ServiceRequest} from "../../model/ServiceRequest";
 
 @Component({
   selector: 'app-reservation',
@@ -11,9 +11,9 @@ import {ReservationInfoComponent} from "../../../dialog/reservation-info/reserva
   styleUrls: ['./reservation.component.css']
 })
 export class ReservationComponent implements OnInit {
-  selected = new FormControl(14)
-  clientId: number = 0;
-  reservations: Array<Reservation> = [];
+  selected = new FormControl()
+  clientId: number = +localStorage.getItem("id")!;
+  serviceRequest: Array<ServiceRequest> = [];
   reservationReq: object = {};
 
   reservationForm :FormGroup= this.builder.group({
@@ -24,22 +24,18 @@ export class ReservationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.clientId = +localStorage.getItem("id")!
-    this.getTechniciansByClientId(this.clientId);
+    this.getServiceRequestByClientId();
   }
 
-  getTechniciansByClientId(clientId: number){
-    this.reservationService.getByClientId(clientId).subscribe( (response: any) => {
-      this.reservations = response;
-      console.log(this.reservations)
+  getServiceRequestByClientId(){
+    this.reservationService.getServiceRequestByClientId(this.clientId).subscribe( (response: any) => {
+      this.serviceRequest = response;
     })
   }
 
   openDialog(id: number){
-    this.reservationService.getReservationById(id).subscribe((response: any) => {
-      this.reservationReq = response;
-      console.log(this.reservationReq)
-      localStorage.setItem('Reservation', JSON.stringify(this.reservationReq));
+    this.reservationService.getServiceRequestById(id).subscribe((response: any) => {
+      localStorage.setItem('Reservation', JSON.stringify(response));
       const dialogRef = this.dialog.open(ReservationInfoComponent);
       dialogRef.afterClosed().subscribe();
     })

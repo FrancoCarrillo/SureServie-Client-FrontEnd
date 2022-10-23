@@ -24,51 +24,21 @@ export class ReservationService {
     return throwError(() => new Error('Something happened with request, please try again later'));
   }
 
-  getAllReservations(){
-    return this.http.get(`${this.basePath}/reservations`, this.httpOptions)
+
+  getServiceRequestById(id: number) {
+    return this.http.get(`${this.basePath}/services/${id}`, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
 
-  getReservationById(id: number) {
-    return this.http.get(`${this.basePath}/reservations/${id}`, this.httpOptions)
+  getServiceRequestByClientId(clientId: number){
+    return this.http.get(`${this.basePath}/services/client/${clientId}`, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
 
-  getTechniciansBySpeciality(specialityId: number) {
-    return this.http.get(`${this.basePath}/technician/speciality/${specialityId}`, this.httpOptions)
-      .pipe(
-        retry(2),
-        catchError(this.handleError)
-      )
-  }
-
-  getByClientId(clientId: number){
-    return this.http.get(`${this.basePath}/reservations/client/${clientId}`, this.httpOptions)
-      .pipe(
-        retry(2),
-        catchError(this.handleError)
-      )
-  }
-
-  getByTechnicianId(id: number){
-    return this.http.get(`${this.basePath}/reservations/technician/${id}`, this.httpOptions)
-      .pipe(
-        retry(2),
-        catchError(this.handleError)
-      )
-  }
-
-  getCurrentUser(id: number){
-    return this.http.get(`${this.basePath}/clients/${id}`, this.httpOptions)
-      .pipe(
-        retry(2),
-        catchError(this.handleError)
-      )
-  }
 }

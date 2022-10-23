@@ -60,28 +60,9 @@ import { ReservationInfoComponent } from './dialog/reservation-info/reservation-
     MatDialogModule,
     MatDividerModule,
     MatDatepickerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatGridListModule
   ],
-    imports: [
-        AppRoutingModule,
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        HttpClientModule,
-        RouterModule,
-        MatButtonModule,
-        MatCardModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        MatIconModule,
-        MatFormFieldModule,
-        MatSelectModule,
-        MatDialogModule,
-        MatDividerModule,
-        MatDatepickerModule,
-        MatSnackBarModule,
-        MatGridListModule
-    ],
   providers: [],
   bootstrap: [AppComponent]
 })

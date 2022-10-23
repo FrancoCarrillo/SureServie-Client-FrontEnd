@@ -1,17 +1,21 @@
 <!-- Reservation Info -->
 <div class="dialog-container" *ngIf="show">
-  <h1 mat-dialog-title >{{getCurrentReservation().serviceRequest.technician.username}}</h1>
+  <h1 mat-dialog-title >Make a Reservation</h1>
   <div mat-dialog-content>
     <div class="information">
       <div class="text">
-        <h3>Selected Date: 12/07/22</h3>
-        <h3>Location: San Borja, Lima, Peru</h3>
-        <h3>Message: {{getCurrentReservation().serviceRequest.detail}}</h3>
+        <h3>{{ getCurrentReservation().detail }}</h3>
+        <h3><b>Location:</b>  {{ getCurrentReservation().technician.district }}</h3>
+        <h3><b>Technician:</b>  {{ getCurrentReservation().technician.username }}</h3>
+        <h3><b>Technician Email:</b>  {{ getCurrentReservation().technician.email }}</h3>
+        <h3><b>Location:</b>  {{ getCurrentReservation().technician.district }}</h3>
+        <h3><b>Reservation Price:</b> {{getCurrentReservation().reservation_price}}$</h3>
+        <h3><b>Total Price:</b> {{getCurrentReservation().total_price}}$</h3>
       </div>
       <div>
         <img class="img" mat-card-image src="https://maxess.se/wp-content/uploads/2020/05/undraw_festivities_tvvj.png" alt="Photo of a Shiba Inu">
         <h5 class="reservation-msg">Ask the technician this ID when approaching your home</h5>
-        <h5 class="reservation-id">{{getCurrentReservation().serviceRequest.id}}</h5>
+        <h5 class="reservation-id">{{getCurrentReservation().id}}</h5>
       </div>
     </div>
   </div>

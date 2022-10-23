@@ -1,19 +1,92 @@
 .divide{
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
+  padding: 0 30px;
 }
 
 .container{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 78%;
+  flex: 3;
+}
+
+.text{
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.containbutton{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 10px;
+}
+
+.button{
+  padding:  0 1.5rem;
+  font-size: 17px;
+}
+
+.title{
+  font-weight: bold;
+  text-align: left;
   margin-top: 2rem;
 }
 
+.service-request{
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+  padding-bottom: 4rem;
+
+  margin-top: 50px;
+}
+
+.service-card{
+  background-color: white;
+  width: 300px;
+  height: 600px;
+  margin: 1rem auto;
+  border-radius: 1rem;
+}
+
+.service-card:hover{
+  box-shadow: 0px 5px 32px -2px rgba(0,0,0,0.27);
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.reservation-button{
+  margin-top: 0;
+  color: #3f51b5;
+}
+
+.waiting-response{
+  color: #dfdf00;
+}
+
+.accepted-response{
+  color: #0ccf0c;
+}
+
+.rejected-response{
+  color: red;
+}
+
 @media (min-width: 1280px) {
+  .form{
+    display: inline;
+  }
+  .containbutton{
+    margin-top: 5rem;
+    margin-left: 2rem;
+  }
   .divide{
     flex-direction: row;
     align-items: center;
@@ -21,102 +94,11 @@
   }
 }
 
-.title{
-  font-weight: bold;
-  font-family: Roboto, sans-serif;
-  font-size: 26px;
-  text-align: left;
-  margin-top: 2rem;
-}
 
-.group{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
-.button{
-  background-color: #0332FC;
-  height: 3.5rem;
-}
 
-@media (min-width: 1280px) {
-  .form-reservation{
-    display: inline;
-    width: 80%;
-  }
-  .group{
-    display: inline;
-  }
-  .button-container{
-    margin-top: 5rem;
-    margin-left: 2rem;
-  }
-}
 
-.button{
-  padding: 0 2rem;
-  font-size: 20px;
-}
 
-.technician-card{
-  background-color: white;
-  width: 1380px;
-  margin: 1rem auto;
-  border-radius: 8px;
-  font-family: Roboto, sans-serif;
-}
 
-.technician-card:hover{
-  box-shadow: 0px 5px 32px -2px rgba(0,0,0,0.27);
-  background-color: white;
-  border-radius: 8px;
-}
 
-.technicians-container{
-  display: flex;
-  width: 100%;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 70px;
-}
 
-.technician-button{
-  color: #0332FC;
-  border-color: #0332FC;
-  height:50px;
-  width:300px;
-  font-size:20px;
-}
-
-img{
-  border-radius: 50%;
-  height: 310px;
-  width: 310px;
-  object-fit: fill;
-}
-
-.card-title{
-  font-weight: bold;
-  font-size: 50px;
-  margin-bottom: 3.5rem;
-}
-
-.card-specialty{
-  font-size: 20px;
-  margin-bottom: 2px;
-}
-
-.card-date{
-  font-size: 16px;
-  margin-bottom: 2.5rem;
-}
-
-.card-request{
-  font-size: 16px;
-  font-weight: bold;
-  color: darkgray;
-}

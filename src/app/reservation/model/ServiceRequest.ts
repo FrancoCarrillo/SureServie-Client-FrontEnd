@@ -1,29 +1,26 @@
-export interface Reservation {
-  id: number;
-  date: Date;
-
-  serviceRequest: ServiceRequest;
-}
+import {Client} from "../../settings/model/Client";
 
 export interface ServiceRequest {
-  serviceRId: number;
+  id: number;
   detail: String;
-  totalPrice: number;
-  reservationPrice: number;
+  reservation_price: number;
   confirmation: number;
-
+  total_price: number;
   technician: Technician;
 }
 
 export interface Technician {
   technicianId: number;
-  username: String;
-  email: String;
-  role: String;
-  professionalProfile: String;
-  valoration: number;
-  district: String;
   disponibility: number;
+  district: String;
+  email: String;
+  professionalProfile: String;
+  username: String;
+  valoration: number;
+
+  name: String;
+  last_name: String;
+
   speciality: Speciality;
 }
 
