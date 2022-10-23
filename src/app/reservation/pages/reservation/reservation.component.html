@@ -1,1 +1,42 @@
-<p>reservation works!</p>
+<div class="divide">
+  <div class="container">
+    <h1 class="title">Reservation</h1>
+    <form [formGroup]="reservationForm">
+      <mat-form-field class="form" appearance="fill">
+        <mat-label>Service Request Status</mat-label>
+        <mat-select formControlName="status" required>
+          <mat-option value=1>ACCEPTED</mat-option>
+          <mat-option value=0>WAITING</mat-option>
+          <mat-option value=2>REJECTED</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="containbutton">
+    <button mat-raised-button mat-button color="primary" class="button" (click)="filterByStatus()" >Search</button>
+    <button mat-raised-button mat-button color="warn" class="button" style="margin-top: 5px" (click)="serviceRequest=allServiceRequest">All</button>
+  </div>
+</div>
+
+<div class="service-request" *ngIf="serviceRequest.length != 0">
+  <div *ngFor="let item of serviceRequest">
+    <mat-card class="service-card" *ngIf="item.confirmation!=3">
+      <img mat-card-image src="https://i2-prod.manchestereveningnews.co.uk/incoming/article22860136.ece/ALTERNATES/s615b/0_AMR_MEN_240122_JA4.jpg"
+           alt="Technician Photo">
+      <mat-card-header>
+        <mat-card-title>{{item.technician.username}} - {{item.technician.speciality.name}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <h4 class="text">Detail:</h4>
+        {{item.detail}}
+        <h4 class="text">Status:</h4>
+        <h4 *ngIf="item.confirmation==0 " class="waiting-response">Waiting Response</h4>
+        <h4 *ngIf="item.confirmation==1 " class="accepted-response">Accepted Response</h4>
+        <h4 *ngIf="item.confirmation==2 " class="rejected-response">Rejected Response</h4>
+        <mat-card-actions *ngIf="item.confirmation==1 ">
+          <button class="reservation-button" mat-button color="primary" (click)="openDialog(item.id)">MORE INFO</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

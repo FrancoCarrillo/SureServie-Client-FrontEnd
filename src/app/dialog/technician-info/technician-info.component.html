@@ -33,13 +33,7 @@
 <div *ngIf="show===false" class="containerForm">
     <h1 mat-dialog-title >{{getCurrentTechnician().name}} {{getCurrentTechnician().last_name}} Confirmation </h1>
     <form [formGroup]="form">
-        <mat-form-field appearance="outline">
-            <mat-label>Fecha</mat-label>
-            <input autocomplete="off" type="date" matInput formControlName="date" required>
-        </mat-form-field>
         <div class="text">
-            <h4>Selected Date:</h4>
-            {{form.value.date}}
             <h4>Location:</h4>
             {{getCurrentTechnician().district}}
         </div>

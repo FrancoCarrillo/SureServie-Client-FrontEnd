@@ -63,11 +63,4 @@ export class ServiceService {
       )
   }
 
-  postReservation(serviceRequestId:any,item: object):Observable<object> {
-    return this.http.post(`${this.basePath}/reservations/${serviceRequestId}`,item,this.httpOptions)
-      .pipe(
-        retry(2),
-        catchError(this.handleError)
-      )
-  }
 }

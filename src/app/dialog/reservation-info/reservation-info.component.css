@@ -1,0 +1,106 @@
+.dialog-container {
+  max-width: 700px;
+  font-family: Roboto, sans-serif;
+}
+
+.mat-dialog-title{
+  font-weight: bold;
+  text-align: center;
+}
+
+.mat-input-element:disabled, .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after {
+  color: black;
+}
+
+.service-date-picker{
+  display: flex;
+  align-items: center;
+
+}
+
+.input-date{
+  width: 13%;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.img{
+  width: 60%;
+  height: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text {
+  font-size: 28px;
+}
+
+.reservation-msg{
+  text-align: center;
+  font-size: 16px;
+}
+
+.reservation-id{
+  font-weight: bold;
+  text-align: center;
+  font-size: 24px;
+}
+
+.button-group{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.mat-raised-button{
+  width: 15rem;
+  margin-right: 50px;
+  background-color: #0332FC;
+  color: ghostwhite;
+}
+
+.mat-stroked-button{
+  width: 15rem;
+  margin-left: 50px;
+  color: #0332FC;
+  border-color: #0332FC;
+}
+
+.payment-form{
+  max-width: 700px;
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  padding: 18px 12px 18px 12px;
+}
+
+.payment-title{
+  font-size: 40px;
+}
+
+.card-number{
+  width: 100%;
+}
+
+.expiration-container{
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.expiration-form-date{
+  width: 15%;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.expiration-form-code{
+  width: 40%;
+  margin-left: 10px;
+}
+
+.customer-info{
+  width: 100%;
+}
