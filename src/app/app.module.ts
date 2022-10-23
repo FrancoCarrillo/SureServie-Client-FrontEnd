@@ -26,6 +26,8 @@ import { TechnicianInfoComponent } from './dialog/technician-info/technician-inf
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatGridListModule} from "@angular/material/grid-list";
+import { ReservationInfoComponent } from './dialog/reservation-info/reservation-info.component';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ServiceComponent,
     SettingsComponent,
     SignupComponent,
-    TechnicianInfoComponent
+    TechnicianInfoComponent,
+    ReservationInfoComponent
   ],
   imports: [
     AppRoutingModule,
@@ -59,6 +62,26 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatDatepickerModule,
     MatSnackBarModule
   ],
+    imports: [
+        AppRoutingModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        HttpClientModule,
+        RouterModule,
+        MatButtonModule,
+        MatCardModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatDialogModule,
+        MatDividerModule,
+        MatDatepickerModule,
+        MatSnackBarModule,
+        MatGridListModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

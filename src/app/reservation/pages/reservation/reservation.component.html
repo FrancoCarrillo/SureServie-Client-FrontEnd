@@ -1,1 +1,47 @@
-<p>reservation works!</p>
+<!-- Search section -->
+<div class="divide">
+  <div class="container">
+    <h1 class="title">Reservations</h1>
+    <form [formGroup]="reservationForm" class="group">
+      <mat-form-field class="form-reservation" appearance="fill">
+        <mat-label>Search</mat-label>
+        <mat-select formControlName="speciality" required>
+          <mat-option value=14>Electricista</mat-option>
+          <mat-option value=4>Gasfitero</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="button-container">
+    <button mat-raised-button color="primary" class="button">SEARCH</button>
+  </div>
+</div>
+
+<!-- Technician Cards -->
+<div class="technicians-container" *ngIf="reservations.length != 0">
+  <div *ngFor="let item of reservations">
+    <mat-card class="technician-card">
+      <mat-card-content>
+        <mat-grid-list cols="3" rowHeight="25rem">
+          <mat-grid-tile>
+            <img src="https://i2-prod.manchestereveningnews.co.uk/incoming/article22860136.ece/ALTERNATES/s615b/0_AMR_MEN_240122_JA4.jpg"
+                 alt="Photo of a Shiba Inu">
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class ="card-content">
+              <h1 class="card-title">{{item.serviceRequest.technician.username}}</h1>
+              <h3 class="card-specialty">{{item.serviceRequest.technician.speciality.name}}</h3>
+              <h4 class="card-date">Date: 20/10/22 {{item.date}}</h4>
+              <h4 class="card-request">REQUEST ACCEPTED</h4>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card-actions>
+              <button class="technician-button" mat-stroked-button color="primary" (click)="openDialog(item.id)">MORE INFO</button>
+            </mat-card-actions>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
