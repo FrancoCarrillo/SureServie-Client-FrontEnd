@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {catchError, Observable, retry, throwError} from "rxjs";
+import {catchError, retry, throwError} from "rxjs";
+import {ServiceRequestPutDto} from "../../dialog/reservation-info/model/ServiceRequestPutDto";
+import {ReservationDto} from "../../dialog/reservation-info/model/ReservationDto";
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +39,20 @@ export class ReservationService {
     return this.http.get(`${this.basePath}/services/client/${clientId}`, this.httpOptions)
       .pipe(
         retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  postReservation(reservationDto: ReservationDto, serviceRequestId: number){
+    return this.http.post(`${this.basePath}/reservations/${serviceRequestId}`, JSON.stringify(reservationDto), this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+
+  updateServiceRequest(serviceRequestId: number, serviceRequestPutDto: ServiceRequestPutDto){
+    return this.http.put(`${this.basePath}/services/${serviceRequestId}`, JSON.stringify(serviceRequestPutDto), this.httpOptions)
+      .pipe(
         catchError(this.handleError)
       )
   }

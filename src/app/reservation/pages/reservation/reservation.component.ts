@@ -14,10 +14,9 @@ export class ReservationComponent implements OnInit {
   selected = new FormControl()
   clientId: number = +localStorage.getItem("id")!;
   serviceRequest: Array<ServiceRequest> = [];
-  reservationReq: object = {};
-
+  allServiceRequest: Array<ServiceRequest> = [];
   reservationForm :FormGroup= this.builder.group({
-    speciality: this.selected,
+    status: this.selected,
   });
 
   constructor(private reservationService: ReservationService, public builder: FormBuilder, public dialog: MatDialog) {
@@ -27,9 +26,19 @@ export class ReservationComponent implements OnInit {
     this.getServiceRequestByClientId();
   }
 
+  filterByStatus(){
+    if(this.reservationForm.get("status")?.status == "VALID"){
+      const status = this.reservationForm.get("status")?.value
+      this.serviceRequest = this.allServiceRequest.filter(e=>e.confirmation == status)
+    } else{
+      alert("Invalid Information")
+    }
+  }
+
   getServiceRequestByClientId(){
     this.reservationService.getServiceRequestByClientId(this.clientId).subscribe( (response: any) => {
-      this.serviceRequest = response;
+      this.allServiceRequest = response;
+      this.serviceRequest = this.allServiceRequest;
     })
   }
 

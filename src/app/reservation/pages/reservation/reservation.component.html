@@ -3,23 +3,24 @@
     <h1 class="title">Reservation</h1>
     <form [formGroup]="reservationForm">
       <mat-form-field class="form" appearance="fill">
-        <mat-label>Search</mat-label>
-        <mat-select formControlName="speciality" required>
-          <mat-option value=14>Electricista</mat-option>
-          <mat-option value=4>Gasfitero</mat-option>
+        <mat-label>Service Request Status</mat-label>
+        <mat-select formControlName="status" required>
+          <mat-option value=1>ACCEPTED</mat-option>
+          <mat-option value=0>WAITING</mat-option>
+          <mat-option value=2>REJECTED</mat-option>
         </mat-select>
       </mat-form-field>
     </form>
   </div>
   <div class="containbutton">
-    <button mat-raised-button mat-button color="primary" class="button" >Search</button>
-    <button mat-raised-button mat-button color="warn" class="button" style="margin-top: 5px">All</button>
+    <button mat-raised-button mat-button color="primary" class="button" (click)="filterByStatus()" >Search</button>
+    <button mat-raised-button mat-button color="warn" class="button" style="margin-top: 5px" (click)="serviceRequest=allServiceRequest">All</button>
   </div>
 </div>
 
 <div class="service-request" *ngIf="serviceRequest.length != 0">
   <div *ngFor="let item of serviceRequest">
-    <mat-card class="service-card">
+    <mat-card class="service-card" *ngIf="item.confirmation!=3">
       <img mat-card-image src="https://i2-prod.manchestereveningnews.co.uk/incoming/article22860136.ece/ALTERNATES/s615b/0_AMR_MEN_240122_JA4.jpg"
            alt="Technician Photo">
       <mat-card-header>

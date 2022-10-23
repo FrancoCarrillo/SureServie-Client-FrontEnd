@@ -1,32 +1,34 @@
 <!-- Reservation Info -->
-<div class="dialog-container" *ngIf="show">
+<div class="dialog-container" *ngIf="showReservationInfo">
   <h1 mat-dialog-title >Make a Reservation</h1>
   <div mat-dialog-content>
     <div class="information">
       <div class="text">
         <h3>{{ getCurrentReservation().detail }}</h3>
-        <h3><b>Location:</b>  {{ getCurrentReservation().technician.district }}</h3>
         <h3><b>Technician:</b>  {{ getCurrentReservation().technician.username }}</h3>
         <h3><b>Technician Email:</b>  {{ getCurrentReservation().technician.email }}</h3>
-        <h3><b>Location:</b>  {{ getCurrentReservation().technician.district }}</h3>
+        <h3><b>Technician Location:</b>  {{ getCurrentReservation().technician.district }}</h3>
         <h3><b>Reservation Price:</b> {{getCurrentReservation().reservation_price}}$</h3>
         <h3><b>Total Price:</b> {{getCurrentReservation().total_price}}$</h3>
       </div>
-      <div>
-        <img class="img" mat-card-image src="https://maxess.se/wp-content/uploads/2020/05/undraw_festivities_tvvj.png" alt="Photo of a Shiba Inu">
-        <h5 class="reservation-msg">Ask the technician this ID when approaching your home</h5>
-        <h5 class="reservation-id">{{getCurrentReservation().id}}</h5>
+
+      <div class="service-date-picker">
+        <b style="font-size: 16px">Choose a Day: </b>
+        <input matInput [min]="minDate" [matDatepicker]="picker" disabled [(ngModel)]="selectDate" class="input-date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker disabled="false"></mat-datepicker>
       </div>
+
     </div>
   </div>
   <div mat-dialog-actions class="button-group">
-    <button mat-raised-button (click)="show=!show">PAY</button>
+    <button mat-raised-button (click)="showDialog('Payment')">PAY</button>
     <button mat-stroked-button mat-dialog-close>BACK</button>
   </div>
 </div>
 
 <!-- Payment -->
-<div *ngIf="show===false" class="payment-form">
+<div *ngIf="showPayment" class="payment-form">
   <h1 mat-dialog-title class="payment-title"> Add Credit/Debit Card </h1>
   <form [formGroup]="paymentForm">
     <mat-form-field class="card-number" appearance="outline">
@@ -72,7 +74,24 @@
     </div>
   </form>
   <div mat-dialog-actions class="button-group">
-    <button mat-raised-button mat-dialog-close (click)="postPayment()">PAY</button>
-    <button mat-stroked-button (click)="show=!show">BACK</button>
+    <button mat-raised-button  (click)="showDialog('Confirmation')">PAY</button>
+    <button mat-stroked-button (click)="showDialog('ReservationInfo')">BACK</button>
   </div>
 </div>
+
+
+<div *ngIf="showConfirmationDialog">
+  <h1 mat-dialog-title>Are you sure to pay for this service?</h1>
+  <div mat-dialog-actions>
+    <button mat-button (click)="showDialog('Payment')" >No</button>
+    <button mat-button mat-dialog-close (click)="postPayment()" >Yes</button>
+  </div>
+</div>
+
+<!--
+      <div>
+        <img class="img" mat-card-image src="https://maxess.se/wp-content/uploads/2020/05/undraw_festivities_tvvj.png" alt="Photo of a Shiba Inu">
+        <h5 class="reservation-msg">Ask the technician this ID when approaching your home</h5>
+        <h5 class="reservation-id">{{getCurrentReservation().id}}</h5>
+      </div>
+ -->

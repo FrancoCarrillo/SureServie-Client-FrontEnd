@@ -67,9 +67,6 @@ export class TechnicianInfoComponent implements OnInit {
     }
     this.serviceService.postServiceRequest(this.getCurrentUserId(),this.getCurrentTechnician().id,serviceRequest).subscribe( (response: any) => {
       console.log(response)
-      this.serviceService.postReservation(response.id,reservation).subscribe( (result: any) => {
-        console.log(result)
-      })
     })
     this.openSnackBar()
   }
