@@ -38,6 +38,7 @@ export class ReservationComponent implements OnInit {
   getServiceRequestByClientId(){
     this.reservationService.getServiceRequestByClientId(this.clientId).subscribe( (response: any) => {
       this.allServiceRequest = response;
+      this.allServiceRequest = this.allServiceRequest.filter(e=>e.confirmation != 3)
       this.serviceRequest = this.allServiceRequest;
     })
   }
