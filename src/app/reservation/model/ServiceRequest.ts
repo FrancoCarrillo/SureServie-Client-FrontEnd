@@ -1,5 +1,3 @@
-import {Client} from "../../settings/model/Client";
-
 export interface ServiceRequest {
   id: number;
   detail: String;
