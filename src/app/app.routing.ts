@@ -7,11 +7,13 @@ import {LoginComponent} from "./login/pages/login/login.component";
 import {SignupComponent} from "./singup/pages/signup/signup.component";
 import {AuthGuard} from "./share/guard/auth.guard";
 import {LoginGuard} from "./share/guard/login.guard";
+import {AppointmentComponent} from "./appointment/pages/appointment/appointment.component";
 
 const routes: Routes = [
   { path: 'service', component: ServiceComponent, canActivate: [AuthGuard]},
   { path: 'reservation', component: ReservationComponent, canActivate: [AuthGuard]},
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
+  { path: 'appointment', component: AppointmentComponent, canActivate: [AuthGuard]},
   { path: 'log-in', component: LoginComponent, canActivate: [LoginGuard]},
   { path: 'sing-up', component: SignupComponent, canActivate: [LoginGuard]},
   { path: '', redirectTo: '/service', pathMatch: 'full'},

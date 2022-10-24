@@ -30,6 +30,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import { ReservationInfoComponent } from './dialog/reservation-info/reservation-info.component';
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatChipsModule} from "@angular/material/chips";
+import { AppointmentComponent } from './appointment/pages/appointment/appointment.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import {MatChipsModule} from "@angular/material/chips";
     SettingsComponent,
     SignupComponent,
     TechnicianInfoComponent,
-    ReservationInfoComponent
+    ReservationInfoComponent,
+    AppointmentComponent
   ],
     imports: [
         AppRoutingModule,
