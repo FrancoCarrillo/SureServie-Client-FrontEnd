@@ -30,9 +30,23 @@
         <h4 class="text">Detail:</h4>
         {{item.detail}}
         <h4 class="text">Status:</h4>
-        <h4 *ngIf="item.confirmation==0 " class="waiting-response">Waiting Response</h4>
-        <h4 *ngIf="item.confirmation==1 " class="accepted-response">Accepted Response</h4>
-        <h4 *ngIf="item.confirmation==2 " class="rejected-response">Rejected Response</h4>
+        <h4 *ngIf="item.confirmation==8 " class="waiting-response">Waiting Response</h4>
+        <h4 *ngIf="item.confirmation==8 " class="accepted-response">Accepted Response</h4>
+        <h4 *ngIf="item.confirmation==8 " class="rejected-response">Rejected Response</h4>
+        <mat-chip-list>
+          <mat-chip class="waiting-chip reservation-chip"  *ngIf="item.confirmation==0 " >
+            Waiting Response
+            <mat-icon class="chip-icon">timer</mat-icon>
+          </mat-chip>
+          <mat-chip class="accepted-chip reservation-chip" *ngIf="item.confirmation==1 " >
+            Accepted Response
+            <mat-icon class="chip-icon">check</mat-icon>
+          </mat-chip>
+          <mat-chip color="warn" class="reservation-chip" *ngIf="item.confirmation==2 " selected>
+            Rejected Response
+            <mat-icon class="chip-icon">close</mat-icon>
+          </mat-chip>
+        </mat-chip-list>
         <mat-card-actions *ngIf="item.confirmation==1 ">
           <button class="reservation-button" mat-button color="primary" (click)="openDialog(item.id)">MORE INFO</button>
         </mat-card-actions>

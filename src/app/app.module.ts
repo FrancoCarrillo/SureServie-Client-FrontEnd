@@ -29,6 +29,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatGridListModule} from "@angular/material/grid-list";
 import { ReservationInfoComponent } from './dialog/reservation-info/reservation-info.component';
 import {MatNativeDateModule} from "@angular/material/core";
+import {MatChipsModule} from "@angular/material/chips";
 
 
 @NgModule({
@@ -42,30 +43,31 @@ import {MatNativeDateModule} from "@angular/material/core";
     TechnicianInfoComponent,
     ReservationInfoComponent
   ],
-  imports: [
-    AppRoutingModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    HttpClientModule,
-    RouterModule,
-    MatButtonModule,
-    MatCardModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatSidenavModule,
-    MatListModule,
-    MatSelectModule,
-    MatDialogModule,
-    MatDividerModule,
-    MatDatepickerModule,
-    MatSnackBarModule,
-    MatGridListModule,
-    MatNativeDateModule,
-    FormsModule
-  ],
+    imports: [
+        AppRoutingModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        HttpClientModule,
+        RouterModule,
+        MatButtonModule,
+        MatCardModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatSidenavModule,
+        MatListModule,
+        MatSelectModule,
+        MatDialogModule,
+        MatDividerModule,
+        MatDatepickerModule,
+        MatSnackBarModule,
+        MatGridListModule,
+        MatNativeDateModule,
+        FormsModule,
+        MatChipsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
