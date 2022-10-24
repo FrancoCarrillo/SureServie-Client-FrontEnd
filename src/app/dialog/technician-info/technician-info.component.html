@@ -6,22 +6,22 @@
                 <img class="img" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
             </div>
             <div class="text">
+                <h4>Username: </h4>
+                {{getCurrentTechnician().username}}
                 <h4>Profession: </h4>
                 {{getCurrentTechnician().speciality.name}}
                 <h4>Location: </h4>
                 {{getCurrentTechnician().district}}
-                <h4>Telephone Number: </h4>
-                {{getCurrentTechnician().telephone_number}}
             </div>
         </div>
         <mat-divider [vertical]="true"></mat-divider>
         <div class="moreInformation">
             <h4>Description:</h4>
             {{getCurrentTechnician().professional_profile}}
-            <h4>Dni:</h4>
+            <h4>DNI:</h4>
             {{getCurrentTechnician().dni}}
-            <h4>Email:</h4>
-            {{getCurrentTechnician().email}}
+          <h4>Valoration:</h4>
+          {{getCurrentTechnician().valoration}}
         </div>
     </div>
     <div mat-dialog-actions class="buttonGroup">
