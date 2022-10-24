@@ -35,7 +35,7 @@
   margin-top: 2rem;
 }
 
-.service-request{
+.reservation{
   display: flex;
   width: 100%;
   gap: 2rem;
@@ -48,7 +48,7 @@
   margin-top: 50px;
 }
 
-.service-card{
+.reservation-card{
   background-color: white;
   width: 300px;
   height: 600px;
@@ -61,16 +61,12 @@
 }
 
 
-.waiting-chip{
-  background-color: #dbdb24;
-  color: #fff;
-}
 .accepted-chip{
   background-color: green;
   color: #fff;
 }
 
-.service-card:hover{
+.reservation-card:hover{
   box-shadow: 0 5px 32px -2px rgba(0,0,0,0.27);
   background-color: white;
   border-radius: 1rem;
@@ -111,11 +107,6 @@
     justify-content: center;
   }
 }
-
-
-
-
-
 
 
 

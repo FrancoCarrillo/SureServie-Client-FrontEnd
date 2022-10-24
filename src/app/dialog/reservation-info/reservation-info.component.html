@@ -5,8 +5,7 @@
     <div class="information">
       <div class="text">
         <h3>{{ getCurrentReservation().detail }}</h3>
-        <h3><b>Technician:</b>  {{ getCurrentReservation().technician.username }}</h3>
-        <h3><b>Technician Email:</b>  {{ getCurrentReservation().technician.email }}</h3>
+        <h3><b>Technician:</b>  {{ getCurrentReservation().technician.name }} {{ getCurrentReservation().technician.last_name }}</h3>
         <h3><b>Technician Location:</b>  {{ getCurrentReservation().technician.district }}</h3>
         <h3><b>Reservation Price:</b> {{getCurrentReservation().reservation_price}}$</h3>
         <h3><b>Total Price:</b> {{getCurrentReservation().total_price}}$</h3>
