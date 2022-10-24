@@ -23,6 +23,11 @@ export class AppComponent implements OnInit{
       "icon": "schedule"
     },
     {
+      "title": "Appointment",
+      "router":"appointment",
+      "icon": "event"
+    },
+    {
       "title": "Settings",
       "router":"settings",
       "icon": "settings"
