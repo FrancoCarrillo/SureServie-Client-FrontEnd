@@ -31,6 +31,7 @@ import { ReservationInfoComponent } from './dialog/reservation-info/reservation-
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatChipsModule} from "@angular/material/chips";
 import { AppointmentComponent } from './appointment/pages/appointment/appointment.component';
+import { RateTechnicianComponent } from './dialog/rate-technician/rate-technician.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { AppointmentComponent } from './appointment/pages/appointment/appointmen
     SignupComponent,
     TechnicianInfoComponent,
     ReservationInfoComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    RateTechnicianComponent
   ],
     imports: [
         AppRoutingModule,

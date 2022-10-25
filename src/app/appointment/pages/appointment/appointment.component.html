@@ -39,10 +39,12 @@
         </mat-chip-list>
         <h4 class="text">Detail:</h4>
         {{item.serviceRequest.detail}}
-        <h4 class="text">Day:</h4>
-        {{ item.date_of }}
+        <span *ngIf="item.status!=1">
+          <h4 class="text" >Day:</h4>
+          {{ item.date_of }}
+        </span>
         <mat-card-actions *ngIf="item.status==1 ">
-          <button class="reservation-button" mat-button color="primary" (click)="openDialog(item.id)">MORE INFO</button>
+          <button class="reservation-button" mat-button color="primary" (click)="openDialog(item.id)">Rate the technician</button>
         </mat-card-actions>
       </mat-card-content>
     </mat-card>
