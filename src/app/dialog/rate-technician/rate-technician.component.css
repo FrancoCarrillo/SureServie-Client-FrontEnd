@@ -1,0 +1,7 @@
+.rate_technician{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}

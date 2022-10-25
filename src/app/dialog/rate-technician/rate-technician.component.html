@@ -1,0 +1,17 @@
+<h1>Rate the service of the technician</h1>
+<div class="rate_technician">
+  <mat-slider
+    class=""
+    color="primary"
+    [max]="5"
+    [min]="1"
+    [step]="1"
+    [thumbLabel]="true"
+    [(ngModel)]="rate_value"
+    aria-labelledby="example-name-label">
+  </mat-slider>
+  <mat-chip-list>
+    <mat-chip color="primary" selected>{{rate_value}}</mat-chip>
+  </mat-chip-list>
+</div>
+<button mat-dialog-close mat-stroked-button color="primary" (click)="send_qualification()">Send Qualification</button>
