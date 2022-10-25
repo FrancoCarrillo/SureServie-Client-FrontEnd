@@ -15,6 +15,7 @@ export interface Technician {
   professionalProfile: String;
   username: String;
   valoration: number;
+  telephone_number: String;
 
   name: String;
   last_name: String;

@@ -44,7 +44,15 @@
         </mat-chip-list>
         <h4 class="text">Detail:</h4>
         {{item.serviceRequest.detail}}
-        <span *ngIf="item.status!=1">
+        <span *ngIf="item.status==0">
+          <h4 class="text" >Email:</h4>
+          {{ item.serviceRequest.technician.email }}
+        </span>
+        <span *ngIf="item.status==0">
+          <h4 class="text" >Telephone number:</h4>
+          {{ item.serviceRequest.technician.telephone_number }}
+        </span>
+        <span *ngIf="item.status==0">
           <h4 class="text" >Day:</h4>
           {{ item.date_of }}
         </span>
