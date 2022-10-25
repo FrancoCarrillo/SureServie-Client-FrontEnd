@@ -6,7 +6,8 @@
         <mat-label>Reservation Status</mat-label>
         <mat-select formControlName="status" required>
           <mat-option value=0>PAYED</mat-option>
-          <mat-option value=1>DONE</mat-option>
+          <mat-option value=1>SERVICE DONE</mat-option>
+          <mat-option value=2>QUALIFICATION DONE</mat-option>
         </mat-select>
       </mat-form-field>
     </form>
@@ -32,8 +33,12 @@
             RESERVATION PAYED
             <mat-icon class="chip-icon">paid</mat-icon>
           </mat-chip>
-          <mat-chip class="accepted-chip reservation-chip" *ngIf="item.status==1 " >
+          <mat-chip class="accepted-chip reservation-chip" *ngIf="item.status!=0" >
             SERVICE DONE
+            <mat-icon class="chip-icon">check</mat-icon>
+          </mat-chip>
+          <mat-chip class="accepted-chip reservation-chip" *ngIf="item.status==2" >
+            QUALIFICATION DONE
             <mat-icon class="chip-icon">check</mat-icon>
           </mat-chip>
         </mat-chip-list>
@@ -44,7 +49,7 @@
           {{ item.date_of }}
         </span>
         <mat-card-actions *ngIf="item.status==1 ">
-          <button class="reservation-button" mat-button color="primary" (click)="openDialog(item.id)">Rate the technician</button>
+          <button class="reservation-button" mat-button color="primary" (click)="openDialog(item)">Rate the technician</button>
         </mat-card-actions>
       </mat-card-content>
     </mat-card>
