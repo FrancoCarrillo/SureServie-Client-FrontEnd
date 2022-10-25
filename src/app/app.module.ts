@@ -31,6 +31,8 @@ import { ReservationInfoComponent } from './dialog/reservation-info/reservation-
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatChipsModule} from "@angular/material/chips";
 import { AppointmentComponent } from './appointment/pages/appointment/appointment.component';
+import { RateTechnicianComponent } from './dialog/rate-technician/rate-technician.component';
+import {MatSliderModule} from "@angular/material/slider";
 
 
 @NgModule({
@@ -43,33 +45,35 @@ import { AppointmentComponent } from './appointment/pages/appointment/appointmen
     SignupComponent,
     TechnicianInfoComponent,
     ReservationInfoComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    RateTechnicianComponent
   ],
-    imports: [
-        AppRoutingModule,
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        HttpClientModule,
-        RouterModule,
-        MatButtonModule,
-        MatCardModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        MatIconModule,
-        MatFormFieldModule,
-        MatSidenavModule,
-        MatListModule,
-        MatSelectModule,
-        MatDialogModule,
-        MatDividerModule,
-        MatDatepickerModule,
-        MatSnackBarModule,
-        MatGridListModule,
-        MatNativeDateModule,
-        FormsModule,
-        MatChipsModule
-    ],
+  imports: [
+    AppRoutingModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    HttpClientModule,
+    RouterModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatSidenavModule,
+    MatListModule,
+    MatSelectModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatDatepickerModule,
+    MatSnackBarModule,
+    MatGridListModule,
+    MatNativeDateModule,
+    FormsModule,
+    MatChipsModule,
+    MatSliderModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

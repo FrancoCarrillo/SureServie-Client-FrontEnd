@@ -58,7 +58,7 @@ export class ReservationInfoComponent implements OnInit {
     this.reservationService.postReservation(reservationDto, currentServiceRequest.id).subscribe((response: any) => {
       this.reservationService.updateServiceRequest(this.getCurrentReservation().id, serviceRequestDto).subscribe((response:any)=> {
         this.openSnackBar()
-        this.route.navigate(['/service']).then()
+        this.route.navigate(['/appointment']).then()
       })
     })
   }
