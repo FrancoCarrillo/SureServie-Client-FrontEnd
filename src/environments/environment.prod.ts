@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  backend: "https://sure-service.herokuapp.com/",
+  backendWs: "wss://sure-service.herokuapp.com/"
 };
