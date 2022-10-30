@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {catchError, Observable, retry, throwError} from "rxjs";
-import {LoginDto} from "../model/LoginDto";
+import {catchError, Observable, throwError} from "rxjs";
+import {SignUpDto} from "../model/SignUpDto";
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class SignupService {
 
-  basePath = 'https://sure-service.herokuapp.com/api/v1/users/auth/sign-in';
+  basePath = 'https://sure-service.herokuapp.com/api/v1/clients/sign-up';
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -27,10 +27,11 @@ export class LoginService {
     return throwError(() => new Error('Something happened with request, please try again later'));
   }
 
-  sign_in(user: LoginDto): Observable<LoginDto>{
-    return this.http.post<LoginDto>(this.basePath, JSON.stringify(user) ,this.httpOptions)
+  sign_up(newUser: SignUpDto): Observable<SignUpDto>{
+    return this.http.post<SignUpDto>(this.basePath, JSON.stringify(newUser), this.httpOptions)
       .pipe(
         catchError(this.handleError)
-      );
+      )
   }
+
 }

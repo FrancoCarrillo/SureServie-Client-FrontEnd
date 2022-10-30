@@ -26,8 +26,6 @@ export class RateTechnicianComponent implements OnInit {
   }
 
   send_qualification(){
-
-
     let updateTechnicianDto = new UpdateTechnicianDto(
       this.reservation.serviceRequest.technician.username,
       this.reservation.serviceRequest.technician.name,

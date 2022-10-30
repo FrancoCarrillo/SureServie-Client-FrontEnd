@@ -4,9 +4,7 @@ import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {AppointmentService} from "../../services/appointment.service";
 import {Reservation} from "../../model/Reservation";
 import {RateTechnicianComponent} from "../../../dialog/rate-technician/rate-technician.component";
-import {Router} from "@angular/router";
-import {MatSnackBar} from "@angular/material/snack-bar";
-import {RateTechnicianService} from "../../../dialog/rate-technician/service/rate-technician.service";
+
 
 @Component({
   selector: 'app-appointment',

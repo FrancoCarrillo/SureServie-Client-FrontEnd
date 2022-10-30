@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'log-in', component: LoginComponent, canActivate: [LoginGuard]},
   { path: 'sing-up', component: SignupComponent, canActivate: [LoginGuard]},
   { path: '', redirectTo: '/service', pathMatch: 'full'},
-  { path: '/', redirectTo: '/service', pathMatch: 'full'},
   { path: '**', component: LoginComponent}
 ];
 
