@@ -14,7 +14,7 @@ export class SettingsComponent implements OnInit  {
 
   enable: boolean = false
   clientId: Number = 0;
-  client: Client = new Client("","","","","","","",0);
+  client: Client = new Client("","","","","","",0);
 
   settingsForm = new FormGroup({
     name: new FormControl(),
@@ -50,7 +50,6 @@ export class SettingsComponent implements OnInit  {
   }
 
   saveData(): void{
-    this.client.password = "string"
     this.settingsService.updateClient(this.clientId, this.client).subscribe((response:any) => {
       this.getClient()
       this.settingsForm.disable()
