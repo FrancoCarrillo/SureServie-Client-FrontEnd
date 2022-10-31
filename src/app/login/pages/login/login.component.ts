@@ -39,6 +39,13 @@ export class LoginComponent implements OnInit {
   onLogin(){
 
     this.loginService.sign_in(this.user).subscribe((response: any) => {
+
+      if(response.roles[0] !== "ROLE_CLIENT")
+      {
+        alert("Wrong username or password")
+        return
+      }
+
       localStorage.setItem("id", response.id)
       this.route.navigate(['/service']).then( () =>{
         location.reload()
