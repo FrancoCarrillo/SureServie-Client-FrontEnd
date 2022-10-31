@@ -32,6 +32,7 @@
       </form>
       <div class="settings-button">
         <button *ngIf="!enable" class="edit-button" type="submit" mat-raised-button (click)="editForm()">EDIT</button>
+        <button *ngIf="!enable" class="cancel-button" type="submit" mat-raised-button (click)="changePassword()">CHANGE PASSWORD</button>
         <button *ngIf="enable" class="save-button" type="submit" mat-raised-button (click)="saveData()">SAVE</button>
         <button *ngIf="enable" class="cancel-button" type="submit" mat-raised-button (click)="cancelEditForm()">CANCEL</button>
       </div>

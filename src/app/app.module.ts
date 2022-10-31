@@ -33,6 +33,7 @@ import {MatChipsModule} from "@angular/material/chips";
 import { AppointmentComponent } from './appointment/pages/appointment/appointment.component';
 import { RateTechnicianComponent } from './dialog/rate-technician/rate-technician.component';
 import {MatSliderModule} from "@angular/material/slider";
+import { ChangePasswordComponent } from './dialog/change-password/pages/change-password/change-password.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import {MatSliderModule} from "@angular/material/slider";
     TechnicianInfoComponent,
     ReservationInfoComponent,
     AppointmentComponent,
-    RateTechnicianComponent
+    RateTechnicianComponent,
+    ChangePasswordComponent
   ],
   imports: [
     AppRoutingModule,

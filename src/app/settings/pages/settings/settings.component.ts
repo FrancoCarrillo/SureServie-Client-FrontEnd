@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {SettingsService} from "../../services/settings.service";
 import {Client} from "../../model/Client";
+import {MatDialog} from "@angular/material/dialog";
+import {ChangePasswordComponent} from "../../../dialog/change-password/pages/change-password/change-password.component";
 
 
 @Component({
@@ -25,7 +27,7 @@ export class SettingsComponent implements OnInit  {
     email: new FormControl(),
   })
 
-  constructor(private settingsService: SettingsService) {}
+  constructor(private settingsService: SettingsService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.clientId = Number(localStorage?.getItem("id"))
@@ -58,4 +60,10 @@ export class SettingsComponent implements OnInit  {
       console.log(e)
     })
   }
+
+  changePassword(): void {
+    const dialogRef = this.dialog.open(ChangePasswordComponent)
+    dialogRef.afterClosed().subscribe();
+  }
+
 }
