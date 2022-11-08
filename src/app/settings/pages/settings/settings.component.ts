@@ -69,7 +69,9 @@ export class SettingsComponent implements OnInit  {
 
   updateImage(): void {
     const dialogRef = this.dialog.open(UpdateImageComponent)
-    dialogRef.afterClosed().subscribe();
+    dialogRef.afterClosed().subscribe(e=>{
+      this.getClient()
+    });
   }
 
 }
