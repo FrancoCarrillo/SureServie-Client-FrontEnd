@@ -16,7 +16,7 @@ export interface Technician {
   username: String;
   valoration: number;
   telephone_number: String;
-
+  image_url: String;
   name: String;
   last_name: String;
 

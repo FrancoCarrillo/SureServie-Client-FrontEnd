@@ -21,7 +21,7 @@
 <div class="reservation" *ngIf="reservations.length != 0">
   <div *ngFor="let item of reservations">
     <mat-card class="reservation-card">
-      <img mat-card-image src="https://i2-prod.manchestereveningnews.co.uk/incoming/article22860136.ece/ALTERNATES/s615b/0_AMR_MEN_240122_JA4.jpg"
+      <img mat-card-image src="{{ item.serviceRequest.technician.image_url }}"
            alt="Technician Photo">
       <mat-card-header>
         <mat-card-title>{{item.serviceRequest.technician.name}} {{item.serviceRequest.technician.last_name}} - {{item.serviceRequest.technician.speciality.name}}</mat-card-title>

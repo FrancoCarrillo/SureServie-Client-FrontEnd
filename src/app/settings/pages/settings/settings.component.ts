@@ -16,7 +16,7 @@ export class SettingsComponent implements OnInit  {
 
   enable: boolean = false
   clientId: Number = 0;
-  client: Client = new Client("","","","","","",0);
+  client: Client = new Client("","","","","","",0, "", "");
 
   settingsForm = new FormGroup({
     name: new FormControl(),
