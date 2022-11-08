@@ -4,6 +4,7 @@ import {SettingsService} from "../../services/settings.service";
 import {Client} from "../../model/Client";
 import {MatDialog} from "@angular/material/dialog";
 import {ChangePasswordComponent} from "../../../dialog/change-password/pages/change-password/change-password.component";
+import {UpdateImageComponent} from "../../../dialog/update-image/pages/update-image/update-image.component";
 
 
 @Component({
@@ -63,6 +64,11 @@ export class SettingsComponent implements OnInit  {
 
   changePassword(): void {
     const dialogRef = this.dialog.open(ChangePasswordComponent)
+    dialogRef.afterClosed().subscribe();
+  }
+
+  updateImage(): void {
+    const dialogRef = this.dialog.open(UpdateImageComponent)
     dialogRef.afterClosed().subscribe();
   }
 
