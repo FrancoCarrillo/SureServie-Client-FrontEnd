@@ -15,6 +15,7 @@ export class ServiceComponent implements OnInit {
   selected3 = new FormControl()
   technicians:Array<any> = [];
   technician: object = new Object();
+  specialities: Array<any> = [];
 
   serviceForm :FormGroup= this.builder.group({
     speciality: this.selected,
@@ -28,6 +29,7 @@ export class ServiceComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllTechnicians()
+    this.getAllSpecialities()
     this.serviceForm.value.speciality = ""
     this.serviceForm.value.place = ""
     this.serviceForm.value.disponibility = ""
@@ -36,6 +38,12 @@ export class ServiceComponent implements OnInit {
   getAllTechnicians(){
     this.serviceService.getAllTechnician().subscribe((response: any)=>{
       this.technicians=response
+    })
+  }
+
+  getAllSpecialities(){
+    this.serviceService.getSpecialities().subscribe((response: any)=>{
+      this.specialities=response
     })
   }
 

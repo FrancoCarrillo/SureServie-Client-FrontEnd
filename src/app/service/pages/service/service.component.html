@@ -4,9 +4,10 @@
     <form [formGroup]="serviceForm" class="group">
       <mat-form-field class="form" appearance="fill">
         <mat-label>Search</mat-label>
-        <mat-select formControlName="speciality" required>
-          <mat-option value=14>Electricista</mat-option>
-          <mat-option value=4>Gasfitero</mat-option>
+        <mat-select  formControlName="speciality" required>
+          <div *ngFor="let item of specialities">
+            <mat-option value="{{ item.id }}">{{ item.name }}</mat-option>
+          </div>
         </mat-select>
       </mat-form-field>
         <mat-form-field class="form2" appearance="fill">
@@ -15,6 +16,7 @@
             <mat-option value="La Molina">La Molina</mat-option>
             <mat-option value="Ate Vitarte">Ate Vitarte</mat-option>
             <mat-option value="Surco">Surco</mat-option>
+            <mat-option value="Los Olivos">Los Olivos</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field class="form2" appearance="fill">

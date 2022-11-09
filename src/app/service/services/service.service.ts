@@ -31,6 +31,13 @@ export class ServiceService {
       )
   }
 
+  getSpecialities(){
+    return this.http.get(`${this.basePath}/speciality`)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+
   getAllServices(disponibility: number, district: string, specialityId: number){
     return this.http.get(`${this.basePath}/technician/disponibility/${disponibility}/district/${district}/speciality/${specialityId}`, this.httpOptions)
     .pipe(
