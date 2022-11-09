@@ -9,7 +9,7 @@ export class Client{
   image_url: String;
   image_Id: String;
 
-  constructor(username: String, name: String ,last_name: String, telephone_number: String, dni: String, email: String, amount_reservation: number,   image_url: String, image_Id: String) {
+  constructor(username: String, name: String ,last_name: String, telephone_number: String, dni: String, email: String, amount_reservation: number, image_url: String, image_Id: String) {
     this.username = username;
     this.name = name;
     this.last_name = last_name;
